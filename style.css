@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+    --accent: #FF3CAC;
+    --muted: #6B7280;
+    --card: #ffffff;
+    --bg: #f8f9ff;
+    --shadow: 0 8px 24px rgba(120, 75, 160, 0.12);
+    --shadow-hover: 0 16px 40px rgba(120, 75, 160, 0.2);
+    --container: 1200px;
+    --whatsapp: #25D366;
+    --text: #1f2937;
+    --border: #e5e7eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #fafbff 0%, var(--bg) 100%);
+    color: var(--text);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background: #00C4FF;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '☁️';
+    position: absolute;
+    font-size: 8rem;
+    top: 20px;
+    left: 10%;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+header::after {
+    content: '☁️';
+    position: absolute;
+    font-size: 6rem;
+    top: 40px;
+    right: 15%;
+    opacity: 0.3;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.logo-badge {
+    display: inline-block;
+    background: #FF4654;
+    padding: 12px 28px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 6px 0 #C1333E;
+}
+
+header h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #FFD406;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    text-shadow:
+        -4px -4px 0 #122C68,
+        4px -4px 0 #122C68,
+        -4px 4px 0 #122C68,
+        4px 4px 0 #122C68;
+    position: relative;
+    z-index: 2;
+}
+
+header p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 30px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.btn-hero {
+    display: inline-block;
+    background: #FF4654;
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 8px 0 #C1333E;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+
+.btn-hero:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 0 #C1333E;
+}
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    max-width: var(--container);
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
+
+.produto-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.produto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #FF3CAC, #784BA0, #2B86C5);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.produto-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent);
+}
+
+.produto-card:hover::before {
+    transform: scaleX(1);
+}
+
+.produto-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    background: #f3f4f6;
+    transform: rotate(-3deg);
+    transition: all 0.4s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.produto-card:hover img {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.produto-card h3 {
+    color: var(--text);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.3px;
+}
+
+
+
+.descricao {
+    color: var(--muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+    flex-grow: 1;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 6px 0 #1ea952;
+    text-transform: uppercase;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 0 #1ea952;
+}
+
+.btn-whatsapp:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 0 #1ea952;
+}
+
+.btn-whatsapp span {
+    font-size: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    background: var(--text);
+    color: white;
+    padding: 32px 20px 24px;
+    margin-top: 40px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.social-btn.instagram {
+    background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCAF45);
+    box-shadow: 0 4px 15px rgba(131, 58, 180, 0.3);
+}
+
+.social-btn.instagram:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(131, 58, 180, 0.5);
+}
+
+.social-btn.whatsapp {
+    background: linear-gradient(135deg, #25D366, #1ea952);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.social-btn.whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+footer p {
+    font-size: 0.875rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.5rem;
+        text-shadow:
+            -3px -3px 0 #122C68,
+            3px -3px 0 #122C68,
+            -3px 3px 0 #122C68,
+            3px 3px 0 #122C68;
+    }
+    
+    header p {
+        font-size: 1.1rem;
+    }
+    
+    .btn-hero {
+        font-size: 1.1rem;
+        padding: 16px 32px;
+    }
+    
+    .produto-card img {
+        height: 240px;
+    }
+    
+    .catalogo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .produto-card img {
+        height: 220px;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}

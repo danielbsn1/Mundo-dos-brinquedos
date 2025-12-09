@@ -3,95 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo dos Brinquedos - Catálogo</title>
+    <title>Mundo dos Brinquedos - Aluguel de Infláveis em Caratinga-MG</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo-badge">🎪 Festas & Eventos</div>
-            <h1>Mundo dos Brinquedos</h1>
-            <p>Infláveis para festas e eventos inesquecíveis!</p>
-            <a href="https://wa.me/5511999999999?text=Olá! Quero fazer um orçamento" class="btn-hero" target="_blank">
-                📞 Quero fazer um orçamento!
-            </a>
+    <header class="topo">
+        <div class="logo">
+            <img src="img/91f65ee4-a08a-426a-ac61-b892eac391bb.webp" alt="Mundo dos Brinquedos">
+        </div>
+        <nav class="menu">
+            <a href="#home">Home</a>
+            <a href="#brinquedos">Brinquedos</a>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#contato">Fale Conosco</a>
+        </nav>
+        <div class="social">
+            <a href="https://wa.me/5533998288837" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/seu_usuario" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
     </header>
 
-    <main class="catalogo">
-        <div class="produto-card">
-            <img src="img/imagem1.jpge.jpeg" alt="Tobogã Inflável">
-            <h3>Tobogã Inflável</h3>
-            <p class="descricao">Diversão garantida para crianças e adultos!</p>
-            <button class="btn-whatsapp" onclick="enviarWhatsApp('Produto 1', 'REF001')">
-                <span>✅</span> Chamar no WhatsApp
-            </button>
+    <section class="carrossel" id="home">
+        <button class="btn-esq">&#10094;</button>
+        <div class="slides">
+            <div class="slide active">
+                <img src="img/imagem1.jpeg.jpeg" alt="Brinquedo 1">
+                <h2>Castelo Inflavel</h2>
+                <h3>Diversão Radical</h3>
+            </div>
+            <div class="slide">
+                <img src="img/imagem2.jpge.jpeg" alt="Brinquedo 2">
+                <h2>Touro Mecânico</h2>
+                <h3>Desafio Total</h3>
+            </div>
+            <div class="slide">
+                <img src="img/imagem3.jpge.jpeg" alt="Brinquedo 3">
+                <h2>Castelo Inflável</h2>
+                <h3>Pula-Pula</h3>
+            </div>
+            <div class="slide">
+                <img src="img/imagem4.jpge.jpeg" alt="Brinquedo 4">
+                <h2>Piscina de Bolinhas</h2>
+                <h3>Diversão Garantida</h3>
+            </div>
+            <div class="slide">
+                <img src="img/imagem5.jpge.jpeg" alt="Brinquedo 5">
+                <h2>Futebol de Sabão</h2>
+                <h3>12 metros</h3>
+            </div>
+            <div class="slide">
+                <img src="img/imagem6.jpge.jpeg" alt="Brinquedo 6">
+                <h2>Cama Elástica</h2>
+                <h3>Pulos Incríveis</h3>
+            </div>
+        </div>
+        <button class="btn-dir">&#10095;</button>
+    </section>
+
+    <section class="intro-section">
+        <div class="intro-content">
+            <h2>Trabalhamos com Aluguel de Brinquedos em Caratinga-MG</h2>
+            <p>Possuímos tobogã inflável, futebol de sabão, cama elástica, castelo inflável e diversas outras opções!</p>
+            <a href="https://wa.me/5533998288837?text=Olá! Quero solicitar um orçamento" class="btn-orcamento" target="_blank">Solicite um orçamento!</a>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>Caratinga e região</h3>
+                <p>Levamos alegria e diversão para toda a região. Onde tem festa, a gente chega junto com nossos brinquedos!</p>
+            </div>
+            <div class="stat-item">
+                <h3>2 mil crianças</h3>
+                <p>Mais de 5 mil sorrisos já passaram pelos nossos brinquedos! Cada festa é uma nova história cheia de diversão!</p>
+            </div>
+            <div class="stat-item">
+                <h3>+ de 3 anos</h3>
+                <p>São mais de 3 anos realizando sonhos e criando memórias. Experiência, confiança e muito carinho em cada detalhe!</p>
+            </div>
+            <div class="stat-item">
+                <h3>Cashback</h3>
+                <p>Ao alugar conosco, você recebe 10% de cashback para usar na sua próxima locação. Economize agora e garanta ainda mais diversão depois!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="brinquedos-section" id="brinquedos">
+        <h2 class="titulo-secao">Nossos Brinquedos</h2>
+        <div class="grid-brinquedos">
+            <div class="brinquedo-item">
+                <img src="img/imagem1.jpge.jpeg" alt="Tobogã Inflável">
+                <h3>Tobogã Inflável</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('Tobogã Inflável')">Veja mais</button>
+            </div>
+            <div class="brinquedo-item">
+                <img src="img/imagem2.jpge.jpeg" alt="Touro Mecânico">
+                <h3>Touro Mecânico</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('Touro Mecânico' )">Veja mais</button>
+            </div>
+            <div class="brinquedo-item">
+                <img src="img/imagem3.jpge.jpeg" alt="Castelo Inflável">
+                <h3>Castelo Inflável</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('Castelo Inflável')">Veja mais</button>
+            </div>
+            <div class="brinquedo-item">
+                <img src="img/imagem4.jpge.jpeg" alt="Piscina de Bolinhas">
+                <h3>Piscina de Bolinhas</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('Piscina de Bolinhas')">Veja mais</button>
+            </div>
+            <div class="brinquedo-item">
+                <img src="img/imagem5.jpge.jpeg" alt="Futebol de Sabão">
+                <h3>Futebol de Sabão</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('Futebol de Sabão')">Veja mais</button>
+            </div>
+            <div class="brinquedo-item">
+                <img src="img/imagem6.jpge.jpeg" alt="Cama Elástica">
+                <h3>Cama Elástica</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('Cama Elástica')">Veja mais</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre-section" id="sobre">
+        <h2 class="titulo-secao-branco">Sobre Nós</h2>
+        <div class="sobre-content">
+            <p>Somos uma empresa especializada em levar diversão com responsabilidade para Caratinga-MG e região.</p>
+            <p>Nossa equipe é formada por monitores altamente treinados, prontos para garantir que as crianças se divirtam com segurança do início ao fim — porque para nós, diversão de verdade é aquela que cuida.</p>
+            <p>Ao longo da nossa trajetória, já realizamos diversos eventos, sempre com o mesmo compromisso: entregar alegria, organização e tranquilidade para quem nos contrata.</p>
+            <a href="https://wa.me/5533998288837?text=Olá! Quero mais informações" class="btn-contato" target="_blank">Entre em contato conosco!</a>
         </div>
 
-        <div class="produto-card">
-            <img src="img/imagem2.jpge.jpeg" alt="Touro Mecânico">
-            <h3>Touro Mecânico</h3>
-            <p class="descricao">Desafio emocionante para sua festa!</p>
-            <button class="btn-whatsapp" onclick="enviarWhatsApp('Produto 2', 'REF002')">
-                <span>✅</span> Chamar no WhatsApp
-            </button>
+        <div class="valores-grid">
+            <div class="valor-item">
+                <h3>Missão</h3>
+                <p>Levar diversão com segurança, qualidade e carinho, oferecendo brinquedos e experiências que encantam crianças, famílias e tornam eventos inesquecíveis.</p>
+            </div>
+            <div class="valor-item">
+                <h3>Visão</h3>
+                <p>Ser referência regional em aluguel de brinquedos, reconhecida pela excelência no atendimento, inovação constante e compromisso com a alegria das crianças.</p>
+            </div>
+            <div class="valor-item">
+                <h3>Valores</h3>
+                <p>Prezamos pela segurança, respeito, pontualidade, atendimento humanizado, responsabilidade com as crianças e paixão por entregar momentos de pura felicidade.</p>
+            </div>
         </div>
 
-        <div class="produto-card">
-            <img src="img/imagem3.jpge.jpeg" alt="Castelo Inflável">
-            <h3>Castelo Inflável</h3>
-            <p class="descricao">Pula-pula perfeito para festas infantis!</p>
-            <button class="btn-whatsapp" onclick="enviarWhatsApp('Produto 3', 'REF003')">
-                <span>✅</span> Chamar no WhatsApp
-            </button>
+    <footer class="rodape" id="contato">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Redes Sociais</h3>
+                <div class="footer-social">
+                    <a href="https://wa.me/5533998288837" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="https://instagram.com/seu_usuario" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Contato</h3>
+                <p>(33) 998288837</p>
+                <p>Caratinga - MG</p>
+            </div>
         </div>
-
-        <div class="produto-card">
-            <img src="img/imagem4.jpge.jpeg" alt="Piscina de Bolinhas">
-            <h3>Piscina de Bolinhas</h3>
-            <p class="descricao">Diversão refrescante para os pequenos!</p>
-            <button class="btn-whatsapp" onclick="enviarWhatsApp('Produto 4', 'REF004')">
-                <span>✅</span> Chamar no WhatsApp
-            </button>
-        </div>
-
-        <div class="produto-card">
-            <img src="img/imagem5.jpge.jpeg" alt="Futebol de Sabão">
-            <h3>Futebol de Sabão</h3>
-            <p class="descricao">Muita risada e diversão garantida!</p>
-            <button class="btn-whatsapp" onclick="enviarWhatsApp('Produto 5', 'REF005')">
-                <span>✅</span> Chamar no WhatsApp
-            </button>
-        </div>
-
-        <div class="produto-card">
-            <img src="img/imagem6.jpge.jpeg" alt="Cama Elástica">
-            <h3>Cama Elástica</h3>
-            <p class="descricao">Pulos e acrobacias para todas as idades!</p>
-            <button class="btn-whatsapp" onclick="enviarWhatsApp('Produto 6', 'REF006')">
-                <span>✅</span> Chamar no WhatsApp
-            </button>
-        </div>
-    </main>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://instagram.com/seu_usuario" target="_blank" class="social-btn instagram">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-                Instagram
-            </a>
-            <a href="https://wa.me/5511999999999" target="_blank" class="social-btn whatsapp">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                WhatsApp
-            </a>
-        </div>
-        <p>© 2024 Mundo dos Brinquedos - Todos os direitos reservados</p>
+        <p class="copyright">Mundo dos Brinquedos, Aluguel de Brinquedos em Caratinga © – Todos os direitos reservados</p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let index = 0;
+        function showSlide(i) {
+            slides.forEach(s => s.classList.remove('active'));
+            slides[i].classList.add('active');
+        }
+        document.querySelector('.btn-esq').onclick = () => {
+            index = (index > 0) ? index - 1 : slides.length - 1;
+            showSlide(index);
+        }
+        document.querySelector('.btn-dir').onclick = () => {
+            index = (index < slides.length - 1) ? index + 1 : 0;
+            showSlide(index);
+        }
+        setInterval(() => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        }, 3500);
+    </script>
 </body>
 </html>

@@ -6,6 +6,8 @@
     <title>Mundo dos Brinquedos - Aluguel de Infláveis em Caratinga-MG</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="topo">
@@ -29,34 +31,14 @@
         <button class="btn-esq">&#10094;</button>
         <div class="slides">
             <div class="slide active">
-                <img src="img/imagem1.jpeg.jpeg" alt="Brinquedo 1">
-                <h2>Castelo Inflavel</h2>
-                <h3>Diversão Radical</h3>
+                <h2>Aluguel de Brinquedos Infláveis</h2>
+                <p>Tobogã, Futebol de Sabão, Cama Elástica e muito mais!</p>
+                <a href="https://wa.me/5533998288837?text=Olá! Quero solicitar um orçamento" class="btn-hero" target="_blank">Solicite seu Orçamento</a>
             </div>
             <div class="slide">
-                <img src="img/imagem2.jpge.jpeg" alt="Brinquedo 2">
-                <h2>Touro Mecânico</h2>
-                <h3>Desafio Total</h3>
-            </div>
-            <div class="slide">
-                <img src="img/imagem3.jpge.jpeg" alt="Brinquedo 3">
-                <h2>Castelo Inflável</h2>
-                <h3>Pula-Pula</h3>
-            </div>
-            <div class="slide">
-                <img src="img/imagem4.jpge.jpeg" alt="Brinquedo 4">
-                <h2>Piscina de Bolinhas</h2>
-                <h3>Diversão Garantida</h3>
-            </div>
-            <div class="slide">
-                <img src="img/imagem5.jpge.jpeg" alt="Brinquedo 5">
-                <h2>Futebol de Sabão</h2>
-                <h3>12 metros</h3>
-            </div>
-            <div class="slide">
-                <img src="img/imagem6.jpge.jpeg" alt="Brinquedo 6">
-                <h2>Cama Elástica</h2>
-                <h3>Pulos Incríveis</h3>
+                <h2>Parcele em até 10x sem juros</h2>
+                <p>Facilidade no pagamento + 10% de cashback na próxima locação!</p>
+                <a href="https://wa.me/5533998288837?text=Olá! Quero saber sobre parcelamento" class="btn-hero" target="_blank">Fale Conosco</a>
             </div>
         </div>
         <button class="btn-dir">&#10095;</button>
@@ -150,6 +132,7 @@
                 <p>Prezamos pela segurança, respeito, pontualidade, atendimento humanizado, responsabilidade com as crianças e paixão por entregar momentos de pura felicidade.</p>
             </div>
         </div>
+    </section>
 
     <footer class="rodape" id="contato">
         <div class="footer-content">
@@ -172,24 +155,39 @@
 
     <script src="script.js"></script>
     <script>
+        // Substitui script inline do carrossel para trabalhar com .slide
         const slides = document.querySelectorAll('.slide');
         let index = 0;
+
         function showSlide(i) {
             slides.forEach(s => s.classList.remove('active'));
             slides[i].classList.add('active');
         }
-        document.querySelector('.btn-esq').onclick = () => {
+
+        document.querySelector('.btn-esq').addEventListener('click', () => {
             index = (index > 0) ? index - 1 : slides.length - 1;
             showSlide(index);
-        }
-        document.querySelector('.btn-dir').onclick = () => {
+        });
+
+        document.querySelector('.btn-dir').addEventListener('click', () => {
             index = (index < slides.length - 1) ? index + 1 : 0;
             showSlide(index);
-        }
-        setInterval(() => {
+        });
+
+        // auto-play (opcional)
+        let autoplay = setInterval(() => {
             index = (index + 1) % slides.length;
             showSlide(index);
-        }, 3500);
+        }, 4500);
+
+        // Pausa auto-play ao interagir
+        document.querySelector('.carrossel').addEventListener('mouseenter', () => clearInterval(autoplay));
+        document.querySelector('.carrossel').addEventListener('mouseleave', () => {
+            autoplay = setInterval(() => {
+                index = (index + 1) % slides.length;
+                showSlide(index);
+            }, 4500);
+        });
     </script>
 </body>
 </html>

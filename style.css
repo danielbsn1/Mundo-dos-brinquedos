@@ -53,92 +53,159 @@ body {
 
 .carrossel {
     margin-top: 110px;
-    height: 700px;
-    background: #FF7B18;
+    height: 600px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
 }
 
 .slides {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
 }
 
 .slide {
     position: absolute;
     width: 100%;
-    height: 700px;
-    text-align: center;
+    height: 100%;
     opacity: 0;
-    transition: opacity .6s ease-in-out;
-    background-size: cover;
-    background-position: center;
+    transition: opacity 1s ease;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 0 50px;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
 }
 
 .slide.active {
     opacity: 1;
 }
 
-.slide img {
-    width: 100%;
-    height: 650px;
-    object-fit: contain;
-    filter: drop-shadow(0px 0px 12px #fff) drop-shadow(0px 0px 20px rgba(0,0,0,.4));
+/* Slide 1 - Laranja vibrante */
+.slide:nth-child(1) {
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 50%, #FFA552 100%);
+}
+
+.slide:nth-child(1)::before {
+    content: '🎉';
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Slide 2 - Azul moderno */
+.slide:nth-child(2) {
+    background: linear-gradient(135deg, #00BCD4 0%, #00ACC1 50%, #0097A7 100%);
+}
+
+.slide:nth-child(2)::before {
+    content: '🎈';
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .slide h2 {
-    font-size: 70px;
-    color: #FF7B18;
+    font-size: 72px;
     font-weight: 900;
-    margin-top: 20px;
-    text-shadow: 
-        -4px -4px 0 #000,
-         4px -4px 0 #000,
-        -4px  4px 0 #000,
-         4px  4px 0 #000;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    line-height: 1.2;
+    animation: slideDown 0.8s ease;
 }
 
-.slide h3 {
-    font-size: 40px;
-    color: white;
-    font-weight: 900;
-    margin-top: 10px;
-    text-shadow: 
-        -3px -3px 0 #000,
-         3px -3px 0 #000,
-        -3px  3px 0 #000,
-         3px  3px 0 #000;
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide p {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 30px;
+    max-width: 800px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    animation: slideUp 0.8s ease 0.2s both;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide .btn-hero {
+    display: inline-block;
+    background: #fff;
+    color: #FF6B35;
+    padding: 18px 45px;
+    border-radius: 50px;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+    animation: fadeIn 0.8s ease 0.4s both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide:nth-child(2) .btn-hero {
+    color: #00BCD4;
+}
+
+.slide .btn-hero:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
 
 .btn-esq, .btn-dir {
-    color: white;
-    font-size: 65px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    background: rgba(255,255,255,0.3);
+    border: none;
+    color: white;
+    font-size: 40px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
     transition: 0.3s;
-    font-weight: bold;
+    z-index: 100;
+    backdrop-filter: blur(10px);
 }
 
 .btn-esq:hover, .btn-dir:hover {
-    color: #000;
+    background: rgba(255,255,255,0.5);
+    transform: translateY(-50%) scale(1.1);
 }
 
-.btn-esq { left: 30px; }
-.btn-dir { right: 30px; }
+.btn-esq { left: 20px; }
+.btn-dir { right: 20px; }
+
+@media(max-width: 900px) {
+    .carrossel { height: 500px; margin-top: 80px; }
+    .slide { padding: 30px 20px; }
+    .slide h2 { font-size: 38px; }
+    .slide p { font-size: 18px; }
+    .slide .btn-hero { font-size: 18px; padding: 14px 35px; }
+    .slide::before { font-size: 120px; }
+    .btn-esq, .btn-dir { font-size: 30px; width: 45px; height: 45px; }
+    .btn-esq { left: 10px; }
+    .btn-dir { right: 10px; }
+}
+
+
 
 .intro-section {
     background: white;
@@ -422,25 +489,4 @@ body {
     opacity: 0.8;
     border-top: 1px solid rgba(255,255,255,0.2);
     padding-top: 20px;
-}
-
-@media (max-width:900px) {
-    .menu { display: none; }
-    .logo img { width: 70px; }
-    .carrossel { height: 600px; margin-top: 80px; }
-    .slide { height: 600px; padding: 0 20px; }
-    .slide img { width: 100%; max-width: 100%; height: 400px; }
-    .slide h2 { font-size: 50px; text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000; }
-    .slide h3 { font-size: 30px; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; }
-    .btn-esq, .btn-dir { font-size: 45px; }
-    .btn-esq { left: 10px; }
-    .btn-dir { right: 10px; }
-    .intro-content h2 { font-size: 28px; }
-    .intro-content p { font-size: 16px; }
-    .titulo-secao, .titulo-secao-branco { font-size: 32px; }
-    .grid-brinquedos { grid-template-columns: 1fr; gap: 20px; }
-    .stats-grid { grid-template-columns: 1fr; }
-    .valores-grid { grid-template-columns: 1fr; }
-    .parcele-section h2 { font-size: 28px; }
-    .parcele-section p { font-size: 16px; }
 }

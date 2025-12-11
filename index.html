@@ -14,11 +14,12 @@
         <div class="logo">
             <img src="img/91f65ee4-a08a-426a-ac61-b892eac391bb.webp" alt="Mundo dos Brinquedos">
         </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <nav class="menu">
-            <a href="#home">Home</a>
-            <a href="#brinquedos">Brinquedos</a>
-            <a href="#sobre">Sobre Nós</a>
-            <a href="#contato">Fale Conosco</a>
+            <a href="#home" onclick="closeMenu()">Home</a>
+            <a href="#brinquedos" onclick="closeMenu()">Brinquedos</a>
+            <a href="#sobre" onclick="closeMenu()">Sobre Nós</a>
+            <a href="#contato" onclick="closeMenu()">Fale Conosco</a>
         </nav>
         <div class="social">
             <a href="https://wa.me/5533998288837" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -36,8 +37,8 @@
                 <a href="https://wa.me/5533998288837?text=Olá! Quero solicitar um orçamento" class="btn-hero" target="_blank">Solicite seu Orçamento</a>
             </div>
             <div class="slide">
-                <h2>Parcele em até 10x sem juros</h2>
-                <p>Facilidade no pagamento + 10% de cashback na próxima locação!</p>
+                <h2>Parcele em até 3x sem juros</h2>
+                <p>Facilidade no pagamento </p>
                 <a href="https://wa.me/5533998288837?text=Olá! Quero saber sobre parcelamento" class="btn-hero" target="_blank">Fale Conosco</a>
             </div>
         </div>
@@ -66,10 +67,7 @@
                 <h3>+ de 3 anos</h3>
                 <p>São mais de 3 anos realizando sonhos e criando memórias. Experiência, confiança e muito carinho em cada detalhe!</p>
             </div>
-            <div class="stat-item">
-                <h3>Cashback</h3>
-                <p>Ao alugar conosco, você recebe 10% de cashback para usar na sua próxima locação. Economize agora e garanta ainda mais diversão depois!</p>
-            </div>
+            
         </div>
     </section>
 
@@ -77,34 +75,45 @@
         <h2 class="titulo-secao">Nossos Brinquedos</h2>
         <div class="grid-brinquedos">
             <div class="brinquedo-item">
-                <img src="img/imagem1.jpge.jpeg" alt="Tobogã Inflável">
-                <h3>Tobogã Inflável</h3>
-                <button class="btn-verde" onclick="enviarWhatsApp('Tobogã Inflável')">Veja mais</button>
+                <img src="img/imagem1.jpge (2).jpeg" alt="TOBOGÃ PATRULHA CANINA">
+                <h3>TOBOGÃ PATRULHA CANINA</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('TOBOGÃ PATRULHA CANINA')">Veja mais</button>
             </div>
+
             <div class="brinquedo-item">
-                <img src="img/imagem2.jpge.jpeg" alt="Touro Mecânico">
-                <h3>Touro Mecânico</h3>
-                <button class="btn-verde" onclick="enviarWhatsApp('Touro Mecânico' )">Veja mais</button>
+                <img src="img/imagem2.jpge.jpeg" alt="Futebol de sabão 8x4">
+                <h3>Futebol de sabão 8x4</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('Futebol de sabão 8x4')">Veja mais</button>
             </div>
+
             <div class="brinquedo-item">
-                <img src="img/imagem3.jpge.jpeg" alt="Castelo Inflável">
-                <h3>Castelo Inflável</h3>
-                <button class="btn-verde" onclick="enviarWhatsApp('Castelo Inflável')">Veja mais</button>
+                <img src="img/imagem5.jpge.jpeg" alt="GIRO RADICAL">
+                <h3>GIRO RADICAL</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('GIRO RADICAL')">Veja mais</button>
             </div>
+
             <div class="brinquedo-item">
-                <img src="img/imagem4.jpge.jpeg" alt="Piscina de Bolinhas">
-                <h3>Piscina de Bolinhas</h3>
-                <button class="btn-verde" onclick="enviarWhatsApp('Piscina de Bolinhas')">Veja mais</button>
+                <img src="img/imagem4.jpge.jpeg" alt="FUTEBOL DE SABÃO 10X5">
+                <h3>FUTEBOL DE SABÃO 10X5</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('FUTEBOL DE SABÃO 10X5')">Veja mais</button>
             </div>
+
             <div class="brinquedo-item">
-                <img src="img/imagem5.jpge.jpeg" alt="Futebol de Sabão">
-                <h3>Futebol de Sabão</h3>
-                <button class="btn-verde" onclick="enviarWhatsApp('Futebol de Sabão')">Veja mais</button>
+                <img src="img/imagem3.jpge.jpeg" alt="CHUTE A GOL">
+                <h3>CHUTE A GOL</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('CHUTE A GOL')">Veja mais</button>
             </div>
+
             <div class="brinquedo-item">
                 <img src="img/imagem6.jpge.jpeg" alt="Cama Elástica">
                 <h3>Cama Elástica</h3>
                 <button class="btn-verde" onclick="enviarWhatsApp('Cama Elástica')">Veja mais</button>
+            </div>
+
+            <div class="brinquedo-item">
+                <img src="img/imagem8.jpge.jpeg" alt="Futebol de sabão 8x4 temático">
+                <h3>Futebol de sabão 8x4 temático</h3>
+                <button class="btn-verde" onclick="enviarWhatsApp('Futebol de sabão 8x4 temático')">Veja mais</button>
             </div>
         </div>
     </section>
@@ -188,6 +197,15 @@
                 showSlide(index);
             }, 4500);
         });
+
+        // Menu mobile
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+        }
+
+        function closeMenu() {
+            document.querySelector('.menu').classList.remove('active');
+        }
     </script>
 </body>
 </html>

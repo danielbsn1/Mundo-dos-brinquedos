@@ -1,6 +1,6 @@
-function enviarWhatsApp(nomeProduto, referencia) {
+function enviarWhatsApp(nomeBrinquedo) {
     const numeroWhatsApp = '5533998288837';
-    const mensagem = `Olá! Gostaria de saber mais sobre o produto:\n\n*${nomeProduto}*\nReferência: ${referencia}\n\nPoderia me enviar mais informações?`;
+    const mensagem = `Olá! Gostaria de saber mais sobre o produto:\n\n*${nomeBrinquedo}*\n\nPoderia me enviar mais informações?`;
     const mensagemCodificada = encodeURIComponent(mensagem);
     const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
     window.open(linkWhatsApp, '_blank');
